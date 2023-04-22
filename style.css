@@ -1,0 +1,474 @@
+/* ***********************
+
+    ESTILOS GENERALES
+
+*********************** */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+/* ***********************
+
+      SECCION MENU
+
+*********************** */
+
+section {
+    min-height: 100vh; 
+    box-sizing: border-box;
+}
+/*
+
+min-height: 100vh; <= esto es para hacer que cada section abarque todo el view y por si agranda (tiene mas contenido, que crezca automaticamente 
+
+*/
+
+#menu {
+    background-color: rgba(195, 35, 88);
+    display: grid;
+    grid-template-columns: repeat(4, 12.5rem);
+    grid-template-rows: repeat(2, 12.5rem);
+    justify-content: center; /*horizontal */
+    align-content: center; /*vertical; */
+    
+    grid-template-areas: 
+    "about about projects projects"
+    "about about post contact";
+}
+
+#menu .tile {
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#menu .tile a {
+    text-decoration: none;
+}
+
+#menu .tile .front {
+    color: white;
+    background-color: black;
+    height: 100%;
+    display: grid;
+    justify-items: center; /*centra el contenido DENTRO del item*/
+    align-items: center; /*centra el contenido DENTRO del item*/
+    padding: 1.25rem;
+    box-sizing: border-box;
+
+    background-size: cover;
+    background-position: center center;
+
+    transition: all 0.3s ease;
+}
+
+#menu .tile .back {
+    background-color: #222;
+    color: white;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+    font-weight: bold;
+    font-size: 1.75rem;
+}
+
+#menu .tile:hover .front {
+    margin-top: -100%;
+}
+
+#menu .tile__projects:hover .front {
+    margin-top: -50%;
+}
+
+/*
+    por alguna razon, tile:hover solo funciona con los dos de abajo
+    (post y contac) porque en la parte de arriba (projects) le da el doble de altura, por eso aqui usamos 50% y no 100
+*/
+
+#menu .tile__about .front {
+    background-image: url(img/profile.png);
+}
+
+#menu .tile__projects .front {
+    background-image: url(img/work-01.png);
+}
+
+#menu .tile__post .front {
+    background-image: url(img/work-02.png);
+}
+
+#menu .tile__contact .front {
+    background-image: url(img/work-03.png);
+}
+
+.tile__about {
+    grid-area: about;
+}
+
+.tile__projects {
+    grid-area: projects;
+}
+
+
+
+/* ***********************
+
+      SECCION ABOUT
+
+*********************** */
+
+#about {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /*repeate (3, 1fr)*/
+    grid-template-rows: 1fr 1fr;
+    gap: 1.25rem;
+    padding: 1.25rem; /*20px*/
+}
+
+#about .tile {
+    border-radius: .625rem;
+    padding: 40px;
+    box-sizing: border-box;
+
+    background-color: #eee;
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#about .tile__1 {
+    grid-column: 1 / 2;
+}
+
+#about .tile__2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+}
+
+#about .tile__2 img {
+    width: 25rem; /* 400px */
+    height: 25rem;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+
+
+/* ***********************
+
+      SECCION PROJECTS
+
+*********************** */
+
+#projects {  
+    background-color: #222;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: .625rem; /*10px*/
+    padding: .625rem;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "main__photo main__photo main__photo photo--2 photo--2 photo--2 photo--3 photo--3 photo--4 photo--4"
+      "main__photo main__photo main__photo photo--2 photo--2 photo--2 photo--3 photo--3 photo--4 photo--4"
+      "main__photo main__photo main__photo photo--2 photo--2 photo--2 photo--5 photo--17 photo--4 photo--4"
+      "main__photo main__photo main__photo photo--7 photo--7 photo--6 photo--6 photo--6 photo--9 photo--9"
+      "main__photo main__photo main__photo photo--7 photo--7 photo--6 photo--6 photo--6 photo--9 photo--9"
+      "main__photo main__photo main__photo photo--7 photo--7 photo--8 photo--8 photo--8 photo--8 photo--8"
+      "main__photo main__photo main__photo photo--10 photo--10 photo--8 photo--8 photo--8 photo--8 photo--8"
+      "main__photo main__photo main__photo photo--10 photo--10 photo--11 photo--11 photo--11 photo--12 photo--12"
+      "main__photo main__photo main__photo photo--13 photo--14 photo--11 photo--11 photo--11 photo--12 photo--12"
+      "main__photo main__photo main__photo photo--15 photo--16 photo--11 photo--11 photo--11 photo--12 photo--12";
+  }
+
+#projects .tile {
+    background-color: #ccc;
+    border-radius: 5px;
+
+    background-size: cover;
+    background-position: center center;
+  }
+
+#projects .tile a {
+    display: grid;
+    height: 100%;
+  }
+
+/* Este es el codigo responsable de la mini animacion */
+#projects .tile:not(.main__photo) {
+    opacity: .8;
+    transition: all .1s ease-in;
+  }
+
+#projects .tile:hover:not(.main__photo) {
+    transform: scale(.99);
+    opacity: 1;
+  }
+/* ------------------------------------------------- */
+
+.main__photo {
+    grid-area: main__photo;
+    padding: 20px;
+    color: white;
+    font-size: 1.25rem; /*20px*/
+    background-image: url(img/work-17.png);
+}
+
+.main__photo h2,
+.main__photo div {
+    background-color: #222;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 5px;
+}
+  
+.main__photo { 
+    grid-area: main__photo; 
+    background-image: url(img/work-17.png);
+}
+  
+.photo--2 { 
+    grid-area: photo--2; 
+    background-image: url(img/work-02.png);
+}
+  
+.photo--7 { 
+    grid-area: photo--7; 
+    background-image: url(img/work-06.png);
+}
+  
+.photo--10 { 
+    grid-area: photo--10; 
+    background-image: url(img/work-10.png);
+}
+  
+.photo--13 { 
+    grid-area: photo--13; 
+    background-image: url(img/work-13.png);
+}
+  
+.photo--14 { 
+    grid-area: photo--14; 
+    background-image: url(img/work-14.png);
+}
+  
+.photo--15 { 
+    grid-area: photo--15; 
+    background-image: url(img/work-15.png);
+}
+  
+.photo--16 { 
+    grid-area: photo--16; 
+    background-image: url(img/work-16.png);
+}
+  
+.photo--3 { 
+    grid-area: photo--3; 
+    background-image: url(img/work-01.png);
+}
+  
+.photo--5 { 
+    grid-area: photo--5; 
+    background-image: url(img/work-08.png);
+}
+  
+.photo--17 { 
+    grid-area: photo--17; 
+    background-image: url(img/work-04.png);
+}
+  
+.photo--6 { 
+    grid-area: photo--6; 
+    background-image: url(img/work-07.png);
+}
+  
+.photo--8 { 
+    grid-area: photo--8; 
+    background-image: url(img/work-05.png);
+}
+  
+.photo--9 { 
+    grid-area: photo--9; 
+    background-image: url(img/work-09.png);
+}
+  
+.photo--4 { 
+    grid-area: photo--4; 
+    background-image: url(img/work-03.png);
+}
+  
+.photo--11 { 
+    grid-area: photo--11; 
+    background-image: url(img/work-11.png);
+}
+  
+.photo--12 { 
+    grid-area: photo--12; 
+    background-image: url(img/work-12.png);
+}
+
+
+
+/* ***********************
+
+      SECCION POST
+
+*********************** */
+
+#post__content {
+    padding: .625rem; /*10px*/
+    background-color: rgb(66, 186, 255);
+    display: grid;
+    grid-template: repeat(2, 18.75rem) / repeat(3, 21.875rem);
+    /* filas / columnas*/
+    gap: .625rem;
+    justify-content: center;
+    align-content: center;
+}
+
+#post__content .post {
+    display: grid;
+    align-content: end;
+    border-radius: 5px;
+    background-color: white;
+
+    background-size: cover;
+    background-position: center center;
+
+    overflow: hidden;
+}
+
+#post__content .post a {
+    color: white;
+    text-decoration: none;
+}
+
+#post__content .post .title {
+    background-color: rgba(34, 34, 34, 0.7); 
+    /* responsable de hacer el bg trasnparente */
+    color: white;
+    padding: .625rem;
+}
+
+#post__content .post .title:hover {
+    background-color: white;
+    color: rgba(34, 34, 34, 0.7);
+}
+
+#post__content .post.post--1 {
+ background-image: url(img/work-15.png);   
+}
+#post__content .post.post--2 {
+ background-image: url(img/work-02.png);   
+}
+#post__content .post.post--3 {
+ background-image: url(img/work-05.png);   
+}
+#post__content .post.post--4 {
+ background-image: url(img/work-08.png);   
+}
+#post__content .post.post--5 {
+ background-image: url(img/work-10.png);   
+}
+#post__content .post.post--6 {
+ background-image: url(img/work-04.png);   
+}
+
+
+/* ***********************
+
+      SECCION POST
+
+*********************** */
+
+#contact {
+    background-color: rgb(26, 72, 151); /*( 66, 186, 255)*/
+    display: grid;
+    grid-template: auto 100px / 700px;
+    justify-content: center;
+    align-content: center;
+    box-sizing: border-box;
+}
+
+#contact form {
+    padding: 1.25rem;
+    color: white;
+    font-weight: bold;
+    display: grid;
+    gap: .9375rem;
+    grid-template: auto / auto;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#contact form input,
+#contact form textarea {
+    padding: 1.25rem .625rem;
+    box-sizing: border-box;
+    font-size: 1.125rem;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+}
+
+.social-networks {
+    justify-self: center;
+    padding: .625rem 0;
+}
+
+.social-networks a {
+    color: white;
+}
+
+#contact form input[type="submit"] {
+    background-color: #67ca50;
+    font-weight: bold;
+    font-size: 1.75rem;
+    cursor: pointer;
+}
+
+#contact form input:hover[type="submit"] {
+    background-color: white; 
+    opacity: .9;
+}
+
+#contact form input:active[type="submit"] {
+    /* background-color: blue;  */
+    opacity: .7;
+}
+
+
+
+/* ***********************
+
+      RESPONSIVE
+
+*********************** */
+
+@media screen and (max-width:966px) {
+    #post__content {
+        grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+        
+    }
+}
+
+@media screen and (max-width:1920px) {
+    
+}
+
+@media screen and (max-width:1920px) {
+    
+}
