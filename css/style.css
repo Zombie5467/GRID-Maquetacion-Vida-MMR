@@ -17,17 +17,18 @@ html {
 
 /* ***********************
 
-      SECCION MENU
+        MENU
 
 *********************** */
 
 section {
-    min-height: 100vh; 
+    min-height: 100vh;  
     box-sizing: border-box;
+    border: 2px solid green; 
 }
 /*
 
-min-height: 100vh; <= esto es para hacer que cada section abarque todo el view y por si agranda (tiene mas contenido, que crezca automaticamente 
+    min-height: 100vh; <= esto es para hacer que cada section abarque todo el view y por si agranda (tiene mas contenido, que crezca automaticamente 
 
 */
 
@@ -37,7 +38,7 @@ min-height: 100vh; <= esto es para hacer que cada section abarque todo el view y
     grid-template-columns: repeat(4, 12.5rem);
     grid-template-rows: repeat(2, 12.5rem);
     justify-content: center; /*horizontal */
-    align-content: center; /*vertical; */
+    align-content: center;   /*vertical; */
     
     grid-template-areas: 
     "about about projects projects"
@@ -60,7 +61,7 @@ min-height: 100vh; <= esto es para hacer que cada section abarque todo el view y
     height: 100%;
     display: grid;
     justify-items: center; /*centra el contenido DENTRO del item*/
-    align-items: center; /*centra el contenido DENTRO del item*/
+    align-items: center;   /*centra el contenido DENTRO del item*/
     padding: 1.25rem;
     box-sizing: border-box;
 
@@ -95,19 +96,19 @@ min-height: 100vh; <= esto es para hacer que cada section abarque todo el view y
 */
 
 #menu .tile__about .front {
-    background-image: url(img/profile.png);
+    background-image: url(../img/profile.png);
 }
 
 #menu .tile__projects .front {
-    background-image: url(img/work-01.png);
+    background-image: url(../img/work-01.png);
 }
 
 #menu .tile__post .front {
-    background-image: url(img/work-02.png);
+    background-image: url(../img/work-02.png);
 }
 
 #menu .tile__contact .front {
-    background-image: url(img/work-03.png);
+    background-image: url(../img/work-03.png);
 }
 
 .tile__about {
@@ -122,7 +123,7 @@ min-height: 100vh; <= esto es para hacer que cada section abarque todo el view y
 
 /* ***********************
 
-      SECCION ABOUT
+        ABOUT
 
 *********************** */
 
@@ -132,6 +133,7 @@ min-height: 100vh; <= esto es para hacer que cada section abarque todo el view y
     grid-template-rows: 1fr 1fr;
     gap: 1.25rem;
     padding: 1.25rem; /*20px*/
+    
 }
 
 #about .tile {
@@ -158,18 +160,18 @@ min-height: 100vh; <= esto es para hacer que cada section abarque todo el view y
 }
 
 #about .tile__2 img {
-    width: 25rem; /* 400px */
-    height: 25rem;
     border-radius: 50%;
     object-fit: cover;
-
+}
+#about .tile img {
+    width: 70%;
 }
 
 
 
 /* ***********************
 
-      SECCION PROJECTS
+      PROJECTS
 
 *********************** */
 
@@ -224,7 +226,7 @@ min-height: 100vh; <= esto es para hacer que cada section abarque todo el view y
     padding: 20px;
     color: white;
     font-size: 1.25rem; /*20px*/
-    background-image: url(img/work-17.png);
+    background-image: url(../img/work-17.png);
 }
 
 .main__photo h2,
@@ -237,94 +239,94 @@ min-height: 100vh; <= esto es para hacer que cada section abarque todo el view y
   
 .main__photo { 
     grid-area: main__photo; 
-    background-image: url(img/work-17.png);
+    background-image: url(../img/work-17.png);
 }
   
 .photo--2 { 
     grid-area: photo--2; 
-    background-image: url(img/work-02.png);
+    background-image: url(../img/work-02.png);
 }
   
 .photo--7 { 
     grid-area: photo--7; 
-    background-image: url(img/work-06.png);
+    background-image: url(../img/work-06.png);
 }
   
 .photo--10 { 
     grid-area: photo--10; 
-    background-image: url(img/work-10.png);
+    background-image: url(../img/work-10.png);
 }
   
 .photo--13 { 
     grid-area: photo--13; 
-    background-image: url(img/work-13.png);
+    background-image: url(../img/work-13.png);
 }
   
 .photo--14 { 
     grid-area: photo--14; 
-    background-image: url(img/work-14.png);
+    background-image: url(../img/work-14.png);
 }
   
 .photo--15 { 
     grid-area: photo--15; 
-    background-image: url(img/work-15.png);
+    background-image: url(../img/work-15.png);
 }
   
 .photo--16 { 
     grid-area: photo--16; 
-    background-image: url(img/work-16.png);
+    background-image: url(../img/work-16.png);
 }
   
 .photo--3 { 
     grid-area: photo--3; 
-    background-image: url(img/work-01.png);
+    background-image: url(../img/work-01.png);
 }
   
 .photo--5 { 
     grid-area: photo--5; 
-    background-image: url(img/work-08.png);
+    background-image: url(../img/work-08.png);
 }
   
 .photo--17 { 
     grid-area: photo--17; 
-    background-image: url(img/work-04.png);
+    background-image: url(../img/work-04.png);
 }
   
 .photo--6 { 
     grid-area: photo--6; 
-    background-image: url(img/work-07.png);
+    background-image: url(../img/work-07.png);
 }
   
 .photo--8 { 
     grid-area: photo--8; 
-    background-image: url(img/work-05.png);
+    background-image: url(../img/work-05.png);
 }
   
 .photo--9 { 
     grid-area: photo--9; 
-    background-image: url(img/work-09.png);
+    background-image: url(../img/work-09.png);
 }
   
 .photo--4 { 
     grid-area: photo--4; 
-    background-image: url(img/work-03.png);
+    background-image: url(../img/work-03.png);
 }
   
 .photo--11 { 
     grid-area: photo--11; 
-    background-image: url(img/work-11.png);
+    background-image: url(../img/work-11.png);
 }
   
 .photo--12 { 
     grid-area: photo--12; 
-    background-image: url(img/work-12.png);
+    background-image: url(../img/work-12.png);
 }
 
 
 
 /* ***********************
 
-      SECCION POST
+        POST
 
 *********************** */
 
@@ -369,28 +371,29 @@ min-height: 100vh; <= esto es para hacer que cada section abarque todo el view y
 }
 
 #post__content .post.post--1 {
- background-image: url(img/work-15.png);   
+ background-image: url(../img/work-15.png);   
 }
 #post__content .post.post--2 {
- background-image: url(img/work-02.png);   
+ background-image: url(../img/work-02.png);   
 }
 #post__content .post.post--3 {
- background-image: url(img/work-05.png);   
+ background-image: url(../img/work-05.png);   
 }
 #post__content .post.post--4 {
- background-image: url(img/work-08.png);   
+ background-image: url(../img/work-08.png);   
 }
 #post__content .post.post--5 {
- background-image: url(img/work-10.png);   
+ background-image: url(../img/work-10.png);   
 }
 #post__content .post.post--6 {
- background-image: url(img/work-04.png);   
+ background-image: url(../img/work-04.png);   
 }
+
 
 
 /* ***********************
 
-      SECCION POST
+        CONTACT
 
 *********************** */
 
@@ -452,23 +455,3 @@ min-height: 100vh; <= esto es para hacer que cada section abarque todo el view y
 
 
 
-/* ***********************
-
-      RESPONSIVE
-
-*********************** */
-
-@media screen and (max-width:966px) {
-    #post__content {
-        grid-template: repeat(3, 1fr) / repeat(2, 1fr);
-        
-    }
-}
-
-@media screen and (max-width:1920px) {
-    
-}
-
-@media screen and (max-width:1920px) {
-    
-}
